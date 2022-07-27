@@ -17,6 +17,7 @@
 		22AAC9B62890DC8B001ED9FB /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AAC9B52890DC8B001ED9FB /* SurveyViewController.swift */; };
 		22AAC9B92890DCF3001ED9FB /* DetailSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AAC9B82890DCF3001ED9FB /* DetailSurveyViewController.swift */; };
 		22AAC9BC2890DF69001ED9FB /* BuatSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AAC9BB2890DF69001ED9FB /* BuatSurveyViewController.swift */; };
+		22AAC9C128912712001ED9FB /* customButtonProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AAC9C028912712001ED9FB /* customButtonProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		22AAC9B52890DC8B001ED9FB /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		22AAC9B82890DCF3001ED9FB /* DetailSurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSurveyViewController.swift; sourceTree = "<group>"; };
 		22AAC9BB2890DF69001ED9FB /* BuatSurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuatSurveyViewController.swift; sourceTree = "<group>"; };
+		22AAC9C028912712001ED9FB /* customButtonProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButtonProperties.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		22AAC9BE2890F631001ED9FB /* CustomProperties */ = {
 			isa = PBXGroup;
 			children = (
+				22AAC9C028912712001ED9FB /* customButtonProperties.swift */,
 			);
 			path = CustomProperties;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				221855D7288FEFF400B3FE25 /* ViewController.swift in Sources */,
 				22AAC9B92890DCF3001ED9FB /* DetailSurveyViewController.swift in Sources */,
 				22AAC9BC2890DF69001ED9FB /* BuatSurveyViewController.swift in Sources */,
+				22AAC9C128912712001ED9FB /* customButtonProperties.swift in Sources */,
 				221855D3288FEFF400B3FE25 /* AppDelegate.swift in Sources */,
 				22AAC9B62890DC8B001ED9FB /* SurveyViewController.swift in Sources */,
 				221855D5288FEFF400B3FE25 /* SceneDelegate.swift in Sources */,
