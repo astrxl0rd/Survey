@@ -13,7 +13,7 @@ class BuatSurveyViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        title = "buat survey baru"
+        
     }
     
 
