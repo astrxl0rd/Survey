@@ -3,38 +3,45 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		221855D3288FEFF400B3FE25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221855D2288FEFF400B3FE25 /* AppDelegate.swift */; };
 		221855D5288FEFF400B3FE25 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221855D4288FEFF400B3FE25 /* SceneDelegate.swift */; };
-		221855D7288FEFF400B3FE25 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221855D6288FEFF400B3FE25 /* ViewController.swift */; };
-		221855DA288FEFF400B3FE25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221855D8288FEFF400B3FE25 /* Main.storyboard */; };
 		221855DC288FEFF700B3FE25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221855DB288FEFF700B3FE25 /* Assets.xcassets */; };
 		221855DF288FEFF700B3FE25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221855DD288FEFF700B3FE25 /* LaunchScreen.storyboard */; };
-		221855E9288FF22000B3FE25 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 221855E8288FF22000B3FE25 /* Alamofire */; };
+		22562FCC2892641800F6BF1B /* CustomThumbnailImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22562FCB2892641800F6BF1B /* CustomThumbnailImage.swift */; };
+		22562FD2289271F700F6BF1B /* UploadPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22562FD1289271F700F6BF1B /* UploadPhotoViewController.swift */; };
+		22562FD52892727800F6BF1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22562FD42892727800F6BF1B /* Main.storyboard */; };
+		22562FE12893D63200F6BF1B /* imageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22562FE02893D63200F6BF1B /* imageCollectionViewCell.swift */; };
 		226CB748289168E700D58BFF /* SurveyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226CB747289168E700D58BFF /* SurveyListTableViewCell.swift */; };
 		22AAC9B62890DC8B001ED9FB /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AAC9B52890DC8B001ED9FB /* SurveyViewController.swift */; };
 		22AAC9B92890DCF3001ED9FB /* DetailSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AAC9B82890DCF3001ED9FB /* DetailSurveyViewController.swift */; };
 		22AAC9BC2890DF69001ED9FB /* BuatSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AAC9BB2890DF69001ED9FB /* BuatSurveyViewController.swift */; };
-		22AAC9C128912712001ED9FB /* customButtonProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AAC9C028912712001ED9FB /* customButtonProperties.swift */; };
+		22AAC9C128912712001ED9FB /* CustomButtonProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AAC9C028912712001ED9FB /* CustomButtonProperties.swift */; };
+		72E87BDAB87BBDE514C8B982 /* Pods_Survey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FC3CEFD92B3EE03A30C4AA /* Pods_Survey.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		221855CF288FEFF400B3FE25 /* Survey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Survey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		221855D2288FEFF400B3FE25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		221855D4288FEFF400B3FE25 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		221855D6288FEFF400B3FE25 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		221855D9288FEFF400B3FE25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		221855DB288FEFF700B3FE25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		221855DE288FEFF700B3FE25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		221855E0288FEFF700B3FE25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22562FCB2892641800F6BF1B /* CustomThumbnailImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomThumbnailImage.swift; sourceTree = "<group>"; };
+		22562FD1289271F700F6BF1B /* UploadPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhotoViewController.swift; sourceTree = "<group>"; };
+		22562FD42892727800F6BF1B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
+		22562FE02893D63200F6BF1B /* imageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageCollectionViewCell.swift; sourceTree = "<group>"; };
 		226CB747289168E700D58BFF /* SurveyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListTableViewCell.swift; sourceTree = "<group>"; };
 		22AAC9B52890DC8B001ED9FB /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		22AAC9B82890DCF3001ED9FB /* DetailSurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSurveyViewController.swift; sourceTree = "<group>"; };
 		22AAC9BB2890DF69001ED9FB /* BuatSurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuatSurveyViewController.swift; sourceTree = "<group>"; };
-		22AAC9C028912712001ED9FB /* customButtonProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customButtonProperties.swift; sourceTree = "<group>"; };
+		22AAC9C028912712001ED9FB /* CustomButtonProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonProperties.swift; sourceTree = "<group>"; };
+		66FC3CEFD92B3EE03A30C4AA /* Pods_Survey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		846C0AF0A2590231F856AF83 /* Pods-Survey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey.release.xcconfig"; path = "Target Support Files/Pods-Survey/Pods-Survey.release.xcconfig"; sourceTree = "<group>"; };
+		AE410EFE8AEED148F94BB16C /* Pods-Survey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey.debug.xcconfig"; path = "Target Support Files/Pods-Survey/Pods-Survey.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				221855E9288FF22000B3FE25 /* Alamofire in Frameworks */,
+				72E87BDAB87BBDE514C8B982 /* Pods_Survey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +61,8 @@
 			children = (
 				221855D1288FEFF400B3FE25 /* Survey */,
 				221855D0288FEFF400B3FE25 /* Products */,
+				E841B0D805E470059ED97E59 /* Pods */,
+				E8EE3F2FCBD8D9DE7129BE00 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,9 +81,8 @@
 				226CB745289168B700D58BFF /* View */,
 				22AAC9B32890DBF8001ED9FB /* Controller */,
 				221855D2288FEFF400B3FE25 /* AppDelegate.swift */,
+				22562FD42892727800F6BF1B /* Main.storyboard */,
 				221855D4288FEFF400B3FE25 /* SceneDelegate.swift */,
-				221855D6288FEFF400B3FE25 /* ViewController.swift */,
-				221855D8288FEFF400B3FE25 /* Main.storyboard */,
 				221855DB288FEFF700B3FE25 /* Assets.xcassets */,
 				221855DD288FEFF700B3FE25 /* LaunchScreen.storyboard */,
 				221855E0288FEFF700B3FE25 /* Info.plist */,
@@ -94,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				226CB747289168E700D58BFF /* SurveyListTableViewCell.swift */,
+				22562FE02893D63200F6BF1B /* imageCollectionViewCell.swift */,
 			);
 			path = ViewCell;
 			sourceTree = "<group>";
@@ -101,7 +110,8 @@
 		226CB74B289230C400D58BFF /* SupportFIles */ = {
 			isa = PBXGroup;
 			children = (
-				22AAC9C028912712001ED9FB /* customButtonProperties.swift */,
+				22AAC9C028912712001ED9FB /* CustomButtonProperties.swift */,
+				22562FCB2892641800F6BF1B /* CustomThumbnailImage.swift */,
 			);
 			path = SupportFIles;
 			sourceTree = "<group>";
@@ -112,8 +122,26 @@
 				22AAC9B52890DC8B001ED9FB /* SurveyViewController.swift */,
 				22AAC9B82890DCF3001ED9FB /* DetailSurveyViewController.swift */,
 				22AAC9BB2890DF69001ED9FB /* BuatSurveyViewController.swift */,
+				22562FD1289271F700F6BF1B /* UploadPhotoViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		E841B0D805E470059ED97E59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE410EFE8AEED148F94BB16C /* Pods-Survey.debug.xcconfig */,
+				846C0AF0A2590231F856AF83 /* Pods-Survey.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E8EE3F2FCBD8D9DE7129BE00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66FC3CEFD92B3EE03A30C4AA /* Pods_Survey.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,9 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 221855E3288FEFF700B3FE25 /* Build configuration list for PBXNativeTarget "Survey" */;
 			buildPhases = (
+				47894C946174A22EC315AEB6 /* [CP] Check Pods Manifest.lock */,
 				221855CB288FEFF400B3FE25 /* Sources */,
 				221855CC288FEFF400B3FE25 /* Frameworks */,
 				221855CD288FEFF400B3FE25 /* Resources */,
+				98096D152E1F400F16F66132 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,7 +163,6 @@
 			);
 			name = Survey;
 			packageProductDependencies = (
-				221855E8288FF22000B3FE25 /* Alamofire */,
 			);
 			productName = Survey;
 			productReference = 221855CF288FEFF400B3FE25 /* Survey.app */;
@@ -163,7 +192,6 @@
 			);
 			mainGroup = 221855C6288FEFF400B3FE25;
 			packageReferences = (
-				221855E7288FF22000B3FE25 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 221855D0288FEFF400B3FE25 /* Products */;
 			projectDirPath = "";
@@ -179,23 +207,67 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22562FD52892727800F6BF1B /* Main.storyboard in Resources */,
 				221855DF288FEFF700B3FE25 /* LaunchScreen.storyboard in Resources */,
 				221855DC288FEFF700B3FE25 /* Assets.xcassets in Resources */,
-				221855DA288FEFF400B3FE25 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47894C946174A22EC315AEB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Survey-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98096D152E1F400F16F66132 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Survey/Pods-Survey-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Survey/Pods-Survey-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Survey/Pods-Survey-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		221855CB288FEFF400B3FE25 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				221855D7288FEFF400B3FE25 /* ViewController.swift in Sources */,
+				22562FD2289271F700F6BF1B /* UploadPhotoViewController.swift in Sources */,
+				22562FCC2892641800F6BF1B /* CustomThumbnailImage.swift in Sources */,
+				22562FE12893D63200F6BF1B /* imageCollectionViewCell.swift in Sources */,
 				22AAC9B92890DCF3001ED9FB /* DetailSurveyViewController.swift in Sources */,
 				22AAC9BC2890DF69001ED9FB /* BuatSurveyViewController.swift in Sources */,
-				22AAC9C128912712001ED9FB /* customButtonProperties.swift in Sources */,
+				22AAC9C128912712001ED9FB /* CustomButtonProperties.swift in Sources */,
 				221855D3288FEFF400B3FE25 /* AppDelegate.swift in Sources */,
 				226CB748289168E700D58BFF /* SurveyListTableViewCell.swift in Sources */,
 				22AAC9B62890DC8B001ED9FB /* SurveyViewController.swift in Sources */,
@@ -206,14 +278,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		221855D8288FEFF400B3FE25 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				221855D9288FEFF400B3FE25 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		221855DD288FEFF700B3FE25 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -343,6 +407,7 @@
 		};
 		221855E4288FEFF700B3FE25 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE410EFE8AEED148F94BB16C /* Pods-Survey.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -361,6 +426,7 @@
 		};
 		221855E5288FEFF700B3FE25 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 846C0AF0A2590231F856AF83 /* Pods-Survey.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -399,25 +465,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		221855E7288FF22000B3FE25 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.6.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		221855E8288FF22000B3FE25 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 221855E7288FF22000B3FE25 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 221855C7288FEFF400B3FE25 /* Project object */;
 }

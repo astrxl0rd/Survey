@@ -6,36 +6,131 @@
 //
 
 import UIKit
+import Alamofire
+//import AlamofireImage
+
+
+struct User: Decodable{
+    let id: Int
+    let email: String
+    let first_name: String
+    let last_name: String
+    let avatar: String
+}
+
+
+struct Pages: Decodable {
+    let page: Int
+    let per_page: Int
+    let total: Int
+    let total_pages: Int
+    var data: [User]
+    
+}
+
+extension UIImageView {
+    func downloaded(from url: URL, contentMode mode: ContentMode = .center) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() { [weak self] in
+                self?.image = image
+            }
+        }.resume()
+    }
+    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloaded(from: url, contentMode: mode)
+    }
+}
 
 class SurveyViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     
     @IBOutlet weak var surveyTableView: UITableView!
     
+//      [data dummy]
+//    let primaryImageThumbnail = [UIImage(named:"gambarBangunanz")]
+//    let namaSurvey = ["meikartaz"]
     
-    let primaryImageThumbnail = [UIImage(named:"gambarBangunanz")]
-    let namaSurvey = ["meikartaz"]
+    
+    var pages = [Pages]()
+    
+    
+    var page = 0
+    var per_page = 0
+    let total: Int = 12
+    var total_pages = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
         title = "Survey"
         surveyTableView.dataSource = self
+        getRequest(){
+            (result) in
+            
+            self.page = result.page
+            self.per_page = result.per_page
+            self.total_pages = result.total
+            
+            
+            self.pages.append(result)
+            self.surveyTableView.reloadData()
+            
+            print(self.pages)
+            
+        }
+    }
+    
+    func getRequest(page: Int = 1, completionHandler: @escaping (Pages) -> Void){
+        var sURL: String!
+        sURL = "https://reqres.in/api/users?page=1"
+        
+        let serializer = DataResponseSerializer(emptyResponseCodes: Set([200,204,205]))
+        
+        var requestData = URLRequest(url: URL(string: sURL)!)
+        
+        AF.request(sURL, parameters: ["page": page]).responseDecodable(of: Pages.self){
+            (response) in
+            switch response.result {
+            case .success(let data):
+                completionHandler(data)
+            case .failure(let error):
+                print("error: \(error)")
+        }
+        
+        }
     }
     
     
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return namaSurvey.count
+        
+        return self.pages.flatMap(\.data).count
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableCell = surveyTableView.dequeueReusableCell(withIdentifier: "tablecell", for: indexPath) as! SurveyListTableViewCell
+//
+//        tableCell.primaryImageThumbnail?.image = primaryImageThumbnail[indexPath.row]
+//        tableCell.namaSurvey?.text = namaSurvey[indexPath.row]
+        let userFlatMap = self.pages.flatMap(\.data)[indexPath.row]
         
-        tableCell.primaryImageThumbnail?.image = primaryImageThumbnail[indexPath.row]
-        tableCell.namaSurvey?.text = namaSurvey[indexPath.row]
+        tableCell.primaryImageThumbnail.contentMode = .scaleToFill
+        tableCell.primaryImageThumbnail.downloaded(from: userFlatMap.avatar)
+        
+        tableCell.namaSurvey.text = userFlatMap.first_name
         
         
         

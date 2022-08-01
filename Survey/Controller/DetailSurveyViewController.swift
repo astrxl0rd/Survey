@@ -15,6 +15,8 @@ class DetailSurveyViewController: UIViewController {
         title = "Detail Survey"
     }
     
+    
+    
 
     /*
     // MARK: - Navigation
