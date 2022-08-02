@@ -9,64 +9,79 @@ import UIKit
 import Alamofire
 import MobileCoreServices
 
+struct responseUser: Decodable{
+    let id: String!
+    let createdAt: String!
+}
+
 class BuatSurveyViewController: UIViewController {
     
-    struct RequestBodyFormDataKeyValue{
-        var email: String
-        var first_name: String 
-    }
-
+    @IBOutlet weak var namaSurvey: UITextField!
+    @IBOutlet weak var luasTanah: UITextField!
+    @IBOutlet weak var luasBangunan: UITextField!
+    @IBOutlet weak var deskripsiBangunan: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         title = "New Survey"
         
     }
     
     
     @IBAction func postRequest(_ sender: Any){
-        var bodyKeyValue = [RequestBodyFormDataKeyValue]()
+        guard let namaSurvey = self.namaSurvey.text else {return}
+        guard let luasTanah = self.luasTanah.text else {return}
         
-        bodyKeyValue.append(RequestBodyFormDataKeyValue(email: "a", first_name: "b"))
-        bodyKeyValue.append(RequestBodyFormDataKeyValue(email: "c", first_name: "d"))
-        bodyKeyValue.append(RequestBodyFormDataKeyValue(email: "e", first_name: "f"))
-        
-        var sURL: String!
-        sURL = "http://reqres.in/api/users"
-        
-        let serializer = DataResponseSerializer(emptyResponseCodes: Set([200,204,205]))
-        
-        var sampleRequest = URLRequest(url: URL(string: sURL)!)
-        sampleRequest.httpMethod = HTTPMethod.post.rawValue
-        
-        AF.upload(multipartFormData: {multipartFormData in
+        let parameters: [String: String] = [
             
-            for formData in bodyKeyValue{
-                multipartFormData.append(Data(formData.first_name.utf8), withName: formData.email)
+            "name": namaSurvey,
+            "job":  luasTanah
+            
+        ]
+        createUser(parameters: parameters, completionHandler: {
+            (result) in
+            if result {
+                let alert = UIAlertController(
+                    title: "sukses", message: "data berhasil disimpan", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "okay", style: .default))
+                self.present(alert, animated: true, completion: nil)
+                
+                //clear textfield
+                
+                self.namaSurvey.text = ""
+                self.luasTanah.text = ""
+                
+            } else{
+                print("gagal menyimpan data")
             }
-            
-        }, to: sURL, method: .post)
-        .uploadProgress{progress in
-            print(CGFloat(progress.fractionCompleted))
-        }.response{response in
-            
-            if (response.error == nil){
-                var responseString: String!
-                responseString = ""
-                
-                if (response.data != nil){
-                    responseString = String(bytes: response.data!, encoding: .utf8)
-                }else{
-                    responseString = response.response?.description
-                }
-                
-                print(responseString ?? "")
-                print(response.response?.statusCode)
-                
-            }
-        }
+        })
+        
+        
     }
     
-
-
+    func createUser (parameters: [String: String], completionHandler: @escaping (Bool) -> Void){
+        
+        var sURL: String!
+        sURL = "https://reqres.in/api/users"
+        
+        AF.upload(multipartFormData:{multipartformData in
+            for (key, value) in parameters{
+                multipartformData.append(Data("\(value)".utf8), withName: key)
+            }
+        } , to: sURL, method: .post).responseDecodable(of: responseUser.self){
+            (response) in
+            switch response.result {
+            case .success(_):
+                completionHandler(true)
+            case .failure(let error):
+                print("error: \(error)")
+            }
+        }
+        
+    }
+    
+    
+    
 }

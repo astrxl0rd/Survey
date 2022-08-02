@@ -106,7 +106,7 @@ class SurveyViewController: UIViewController, UITableViewDataSource, UITableView
                 DispatchQueue.main.asyncAfter(deadline: .now() + 5){
                     self.getRequest(page: self.page){
                         (result) in
-//                        self.surveyTableView.tableFooterView = nil
+                        //                        self.surveyTableView.tableFooterView = nil
                         self.pageData.append(result)
                         self.surveyTableView.reloadData()
                         
