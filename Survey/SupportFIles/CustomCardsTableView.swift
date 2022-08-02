@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomCardsTableView: UIButton {
+class CustomCardsTableView: UIView {
     
     override init(frame: CGRect){
         super.init(frame: frame)

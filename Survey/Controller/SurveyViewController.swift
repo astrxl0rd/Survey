@@ -61,7 +61,7 @@ class SurveyViewController: UIViewController, UITableViewDataSource, UITableView
     //    let namaSurvey = ["meikartaz"]
     
     
-    var pages = [Pages]()
+    var pageData = [Pages]()
     var idx: Int = 0
     
     var page = 0
@@ -83,13 +83,13 @@ class SurveyViewController: UIViewController, UITableViewDataSource, UITableView
             
             self.page = result.page
             self.per_page = result.per_page
-            self.total_pages = result.total
+            self.total_pages = result.total_pages
             
             
-            self.pages.append(result)
+            self.pageData.append(result)
             self.surveyTableView.reloadData()
             
-            print(self.pages)
+            print(self.pageData)
             
         }
     }
@@ -97,11 +97,30 @@ class SurveyViewController: UIViewController, UITableViewDataSource, UITableView
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position = scrollView.contentOffset.y
         
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        
+        if (position>maximumOffset){
+            if (self.page < self.total_pages){
+                //                self.surveyTableView.tableFooterView =
+                self.page  += 1
+                DispatchQueue.main.asyncAfter(deadline: .now() + 5){
+                    self.getRequest(page: self.page){
+                        (result) in
+//                        self.surveyTableView.tableFooterView = nil
+                        self.pageData.append(result)
+                        self.surveyTableView.reloadData()
+                        
+                        
+                    }
+                }
+            }
+        }
+        
     }
     
     func getRequest(page: Int = 1, completionHandler: @escaping (Pages) -> Void){
         var sURL: String!
-        sURL = "https://reqres.in/api/users?page=2"
+        sURL = "https://reqres.in/api/users"
         
         
         AF.request(sURL, parameters: ["page": page]).responseDecodable(of: Pages.self){
@@ -117,12 +136,12 @@ class SurveyViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     
-  
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.pages.flatMap(\.data).count
+        return self.pageData.flatMap(\.data).count
         
     }
     
@@ -131,13 +150,14 @@ class SurveyViewController: UIViewController, UITableViewDataSource, UITableView
         //
         //        tableCell.primaryImageThumbnail?.image = primaryImageThumbnail[indexPath.row]
         //        tableCell.namaSurvey?.text = namaSurvey[indexPath.row]
-        let userFlatMap = self.pages.flatMap(\.data)[indexPath.row]
+        let userFlatMap = self.pageData.flatMap(\.data)[indexPath.row]
         
         tableCell.primaryImageThumbnail.contentMode = .scaleToFill
         tableCell.primaryImageThumbnail.downloaded(from: userFlatMap.avatar)
         
         tableCell.namaSurvey.text = userFlatMap.first_name
-//        tableCell.delegate = self
+        
+        
         
         
         
@@ -148,9 +168,9 @@ class SurveyViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let useFlatMap = self.pages.flatMap(\.data)[indexPath.row]
+        let useFlatMap = self.pageData.flatMap(\.data)[indexPath.row]
         
-//        print(useFlatMap.first_name)
+        //        print(useFlatMap.first_name)
         
         let navDetail = storyboard?.instantiateViewController(identifier: "detail") as! DetailSurveyViewController
         
@@ -164,7 +184,8 @@ class SurveyViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     
-
+    
+    
     
     
     

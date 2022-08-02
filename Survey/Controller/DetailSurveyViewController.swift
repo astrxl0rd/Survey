@@ -24,7 +24,7 @@ class DetailSurveyViewController: UIViewController {
 
         title = "Detail Survey"
         
-        
+        primaryImage.contentMode = .scaleToFill
         primaryImage.downloaded(from: imageData)
         namaSurvey.text = namaSurveyData
         
