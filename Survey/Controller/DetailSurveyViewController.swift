@@ -8,12 +8,30 @@
 import UIKit
 
 class DetailSurveyViewController: UIViewController {
-
+    
+    var imageData = ""
+    var namaSurveyData = ""
+    
+    
+    
+    
+    @IBOutlet weak var primaryImage: UIImageView!
+    @IBOutlet weak var namaSurvey: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = "Detail Survey"
+        
+        
+        primaryImage.downloaded(from: imageData)
+        namaSurvey.text = namaSurveyData
+        
+        
     }
+    
+    
     
     
     

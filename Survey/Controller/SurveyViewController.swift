@@ -28,6 +28,8 @@ struct Pages: Decodable {
     
 }
 
+
+
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: ContentMode = .center) {
         contentMode = mode
@@ -37,7 +39,7 @@ extension UIImageView {
                 let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
                 let data = data, error == nil,
                 let image = UIImage(data: data)
-                else { return }
+            else { return }
             DispatchQueue.main.async() { [weak self] in
                 self?.image = image
             }
@@ -54,13 +56,13 @@ class SurveyViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet weak var surveyTableView: UITableView!
     
-//      [data dummy]
-//    let primaryImageThumbnail = [UIImage(named:"gambarBangunanz")]
-//    let namaSurvey = ["meikartaz"]
+    //      [data dummy]
+    //    let primaryImageThumbnail = [UIImage(named:"gambarBangunanz")]
+    //    let namaSurvey = ["meikartaz"]
     
     
     var pages = [Pages]()
-    
+    var idx: Int = 0
     
     var page = 0
     var per_page = 0
@@ -71,10 +73,11 @@ class SurveyViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        
         // Do any additional setup after loading the view.
         title = "Survey"
         surveyTableView.dataSource = self
+        surveyTableView.delegate = self
         getRequest(){
             (result) in
             
@@ -91,13 +94,15 @@ class SurveyViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
+        
+    }
+    
     func getRequest(page: Int = 1, completionHandler: @escaping (Pages) -> Void){
         var sURL: String!
-        sURL = "https://reqres.in/api/users?page=1"
+        sURL = "https://reqres.in/api/users?page=2"
         
-        let serializer = DataResponseSerializer(emptyResponseCodes: Set([200,204,205]))
-        
-        var requestData = URLRequest(url: URL(string: sURL)!)
         
         AF.request(sURL, parameters: ["page": page]).responseDecodable(of: Pages.self){
             (response) in
@@ -106,47 +111,73 @@ class SurveyViewController: UIViewController, UITableViewDataSource, UITableView
                 completionHandler(data)
             case .failure(let error):
                 print("error: \(error)")
-        }
-        
+            }
+            
         }
     }
     
     
+  
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return self.pages.flatMap(\.data).count
-
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableCell = surveyTableView.dequeueReusableCell(withIdentifier: "tablecell", for: indexPath) as! SurveyListTableViewCell
-//
-//        tableCell.primaryImageThumbnail?.image = primaryImageThumbnail[indexPath.row]
-//        tableCell.namaSurvey?.text = namaSurvey[indexPath.row]
+        //
+        //        tableCell.primaryImageThumbnail?.image = primaryImageThumbnail[indexPath.row]
+        //        tableCell.namaSurvey?.text = namaSurvey[indexPath.row]
         let userFlatMap = self.pages.flatMap(\.data)[indexPath.row]
         
         tableCell.primaryImageThumbnail.contentMode = .scaleToFill
         tableCell.primaryImageThumbnail.downloaded(from: userFlatMap.avatar)
         
         tableCell.namaSurvey.text = userFlatMap.first_name
+//        tableCell.delegate = self
         
         
         
         return tableCell
         
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let useFlatMap = self.pages.flatMap(\.data)[indexPath.row]
+        
+//        print(useFlatMap.first_name)
+        
+        let navDetail = storyboard?.instantiateViewController(identifier: "detail") as! DetailSurveyViewController
+        
+        navDetail.imageData = useFlatMap.avatar
+        navDetail.namaSurveyData = useFlatMap.first_name
+        
+        navigationController?.pushViewController(navDetail, animated: true)
+        
+        
+        
     }
-    */
+    
+    
 
+    
+    
+    
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -20,6 +20,7 @@
 		22AAC9B92890DCF3001ED9FB /* DetailSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AAC9B82890DCF3001ED9FB /* DetailSurveyViewController.swift */; };
 		22AAC9BC2890DF69001ED9FB /* BuatSurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AAC9BB2890DF69001ED9FB /* BuatSurveyViewController.swift */; };
 		22AAC9C128912712001ED9FB /* CustomButtonProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AAC9C028912712001ED9FB /* CustomButtonProperties.swift */; };
+		22D01DAA2898C6590067EE25 /* CustomCardsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D01DA92898C6590067EE25 /* CustomCardsTableView.swift */; };
 		72E87BDAB87BBDE514C8B982 /* Pods_Survey.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FC3CEFD92B3EE03A30C4AA /* Pods_Survey.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		22AAC9B82890DCF3001ED9FB /* DetailSurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSurveyViewController.swift; sourceTree = "<group>"; };
 		22AAC9BB2890DF69001ED9FB /* BuatSurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuatSurveyViewController.swift; sourceTree = "<group>"; };
 		22AAC9C028912712001ED9FB /* CustomButtonProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonProperties.swift; sourceTree = "<group>"; };
+		22D01DA92898C6590067EE25 /* CustomCardsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCardsTableView.swift; sourceTree = "<group>"; };
 		66FC3CEFD92B3EE03A30C4AA /* Pods_Survey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Survey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		846C0AF0A2590231F856AF83 /* Pods-Survey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey.release.xcconfig"; path = "Target Support Files/Pods-Survey/Pods-Survey.release.xcconfig"; sourceTree = "<group>"; };
 		AE410EFE8AEED148F94BB16C /* Pods-Survey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Survey.debug.xcconfig"; path = "Target Support Files/Pods-Survey/Pods-Survey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				22AAC9C028912712001ED9FB /* CustomButtonProperties.swift */,
 				22562FCB2892641800F6BF1B /* CustomThumbnailImage.swift */,
+				22D01DA92898C6590067EE25 /* CustomCardsTableView.swift */,
 			);
 			path = SupportFIles;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				22AAC9B92890DCF3001ED9FB /* DetailSurveyViewController.swift in Sources */,
 				22AAC9BC2890DF69001ED9FB /* BuatSurveyViewController.swift in Sources */,
 				22AAC9C128912712001ED9FB /* CustomButtonProperties.swift in Sources */,
+				22D01DAA2898C6590067EE25 /* CustomCardsTableView.swift in Sources */,
 				221855D3288FEFF400B3FE25 /* AppDelegate.swift in Sources */,
 				226CB748289168E700D58BFF /* SurveyListTableViewCell.swift in Sources */,
 				22AAC9B62890DC8B001ED9FB /* SurveyViewController.swift in Sources */,
